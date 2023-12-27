@@ -54,6 +54,17 @@ public class EmployeServiceH2Imp implements  EmployeeService{
 
     @Override
     public String deleteEmployeeById(String id) {
-        return null;
+
+        employeeRepository.deleteById(id);
+        return "Record with id :"+id +"is deleted !!";
+    }
+
+    @Override
+
+    public Employee UpdateEmployeeBy(Employee emp) {
+        EmployeeEntity ent= employeeRepository.findById(emp.getId()).get();
+        BeanUtils.copyProperties(emp,ent);
+        employeeRepository.save(ent);
+        return emp;
     }
 }

@@ -29,4 +29,19 @@ public class EmployeeControllerV2 {
     public Employee getEmplbyId(@PathVariable String id){
         return employeeService.getEmpById(id);
     }
+
+
+    @DeleteMapping("/{id}")
+    public String deleteEmpByID(@PathVariable(name = "id") String Id){
+
+        return employeeService.deleteEmployeeById(Id);
+    }
+
+    @PutMapping()
+    public Employee updateTheEmployee(@RequestBody Employee emp){
+
+        return  employeeService.UpdateEmployeeBy(emp);
+    }
+
+
 }

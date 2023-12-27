@@ -40,4 +40,9 @@ public class EmployeeServiceMemImp implements EmployeeService {
     public String deleteEmployeeById(String id) {
         return null;
     }
+
+    @Override
+    public Employee UpdateEmployeeBy(Employee emp) {
+        return null;
+    }
 }
